@@ -36,7 +36,7 @@ Create an account in [OpenWeather](https://openweathermap.org/) and generate an 
 cargo run -- --city Lima --country-code PE
 ```
 
-> [!IMPORTANT] API Key
+> [!IMPORTANT]
 > Don't forget the API Key
 
 ## Dependencies

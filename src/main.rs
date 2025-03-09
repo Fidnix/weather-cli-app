@@ -4,7 +4,7 @@ use colored::*; // Importing colored crate for text coloring
 use dotenvy::dotenv;
 use std::env;
 
-use weather::{get_weather_info, display_weather_info};
+use weather::WeatherResponse;
 
 fn main() {
     dotenv().ok();
@@ -27,9 +27,9 @@ fn main() {
         let api_key = env::var("OPENWEATHER_API_KEY").expect("DATABASE_URL no está definida");
 
         // Calling the function to fetch weather information
-        match get_weather_info(&city, &country_code, &api_key) {
+        match WeatherResponse::get_info(&city, &country_code, &api_key) {
             Ok(response) => {
-                display_weather_info(&response); // Displaying weather information
+                WeatherResponse::display_info(&response); // Displaying weather information
             }
             Err(err) => {
                 eprintln!("Error: {}", err); // Printing error message in case of failure

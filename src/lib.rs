@@ -30,6 +30,7 @@ struct Wind {
     speed: f64, // Wind speed in meters per second
 }
 
+// Methods implementation for WeatherResponse abstraction 
 impl WeatherResponse {
     // Function to get weather information from OpenWeatherMap API
     pub fn get_info(city: &str, country_code: &str, api_key: &str) -> Result<Self, reqwest::Error> {

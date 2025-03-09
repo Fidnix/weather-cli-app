@@ -23,7 +23,7 @@ fn main() {
     println!("{}", "Welcome to Weather Station!".bright_yellow()); // Displaying welcome message
 
     // Get your API key from OpenWeatherMap
-    let api_key = env::var("OPENWEATHER_API_KEY").expect("OPENWEATHER_API_KEY no está definida");
+    let api_key = env::var("OPENWEATHER_API_KEY").expect("OPENWEATHER_API_KEY isn't defined");
 
     // Calling the function to fetch weather information
     match WeatherResponse::get_info(&args.city, &args.country_code, &api_key) {

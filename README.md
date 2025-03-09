@@ -4,7 +4,8 @@ This proyect is forked from [weatherApplicationCLI](https://github.com/BekBrace/
 
 This repository contains a Rust program that fetches and displays weather information from the OpenWeatherMap API based on command args for city name and country code.
 
--image-
+![preview](https://github.com/user-attachments/assets/db1dd665-16e3-4ca6-9aa9-bec087c2627c)
+
 
 ## Instalation and usage
 

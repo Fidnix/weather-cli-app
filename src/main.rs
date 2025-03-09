@@ -4,6 +4,9 @@ use serde::Deserialize; // Importing serde for JSON deserialization
 
 use colored::*; // Importing colored crate for text coloring
 
+use dotenvy::dotenv;
+use std::env;
+
 // Struct to deserialize the JSON response from OpenWeatherMap API
 #[derive(Deserialize, Debug)]
 struct WeatherResponse {
@@ -102,6 +105,7 @@ fn get_temperature_emoji(temperature: f64) -> &'static str {
 }
 
 fn main() {
+    dotenv().ok();
     println!("{}", "Welcome to Weather Station!".bright_yellow()); // Displaying welcome message
 
     loop {
@@ -118,10 +122,10 @@ fn main() {
         let country_code = country_code.trim();
 
         // Get your API key from OpenWeatherMap
-        let api_key = "d8d31293bee740761c9ba933823c09ea"; 
+        let api_key = env::var("OPENWEATHER_API_KEY").expect("DATABASE_URL no está definida");
 
         // Calling the function to fetch weather information
-        match get_weather_info(&city, &country_code, api_key) {
+        match get_weather_info(&city, &country_code, &api_key) {
             Ok(response) => {
                 display_weather_info(&response); // Displaying weather information
             }

@@ -43,3 +43,5 @@ cargo run -- --city Lima --country-code PE
 * serde - A Rust library for serializing and deserializing data structures
 * colored - A Rust library for terminal text coloring
 * reqwest - A Rust library for making HTTP requests
+* dotenvy - A rust library to read .env files
+* clap - A rust library for arg parsing
